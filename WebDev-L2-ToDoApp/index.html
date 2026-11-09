@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskNest - a personal productivity dashboard.">
+  <title>TaskNest | Productivity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a href="#" class="logo">✦ Task<span>Nest.</span></a>
+      <span class="top-label">YOUR PRODUCTIVITY SPACE</span>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <p class="eyebrow">STAY ORGANIZED, STAY FOCUSED</p>
+        <h1>Make today <span>count.</span></h1>
+        <p>A simple space to organize your tasks and celebrate your progress.</p>
+      </section>
+
+      <section class="stats" aria-label="Task statistics">
+        <div class="stat-card">
+          <p>Total Tasks</p>
+          <strong id="total-count">0</strong>
+          <span>Everything on your list</span>
+        </div>
+        <div class="stat-card">
+          <p>In Progress</p>
+          <strong id="pending-count">0</strong>
+          <span>Keep moving forward</span>
+        </div>
+        <div class="stat-card">
+          <p>Completed</p>
+          <strong id="completed-count">0</strong>
+          <span>Great work!</span>
+        </div>
+      </section>
+
+      <section class="progress-panel">
+        <div class="progress-heading">
+          <div>
+            <p class="eyebrow">YOUR PROGRESS</p>
+            <h2>One task at a time.</h2>
+          </div>
+          <strong id="progress-percent">0%</strong>
+        </div>
+        <div class="progress-track"
+             role="progressbar"
+             aria-label="Task completion progress"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="0"
+             id="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="workspace-heading">
+          <div>
+            <p class="eyebrow">YOUR WORKSPACE</p>
+            <h2>My Tasks</h2>
+          </div>
+          <button id="new-task" class="primary-btn">+ Add New Task</button>
+        </div>
+
+        <div class="toolbar">
+          <input id="search" type="search"
+                 placeholder="Search your tasks..."
+                 aria-label="Search tasks">
+          <select id="filter" aria-label="Filter tasks">
+            <option value="all">All Tasks</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+
+        <div id="task-list" class="task-list"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>TaskNest © 2026</p>
+      <p>Oasis Infobyte · Level 2 Task 3</p>
+    </footer>
+  </div>
+
+  <dialog id="task-dialog">
+    <form id="task-form">
+      <div class="dialog-heading">
+        <h2 id="dialog-title">Create a Task</h2>
+        <button type="button" id="close-dialog"
+                class="close-btn" aria-label="Close">×</button>
+      </div>
+
+      <label for="task-title">Task Title *</label>
+      <input id="task-title" type="text" maxlength="100"
+             placeholder="What needs to be done?" required>
+
+      <label for="task-description">Description</label>
+      <textarea id="task-description" rows="3"
+                maxlength="500"
+                placeholder="Add a few details..."></textarea>
+
+      <label for="task-priority">Priority</label>
+      <select id="task-priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <button type="submit" class="primary-btn" id="save-task">
+        Save Task
+      </button>
+    </form>
+  </dialog>
+</body>
+</html>
