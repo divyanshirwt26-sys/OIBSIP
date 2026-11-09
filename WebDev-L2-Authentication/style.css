@@ -1,0 +1,260 @@
+
+:root {
+  --purple: #765fe8;
+  --dark: #20213b;
+  --muted: #83869e;
+  --border: #e5e5f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  background: #faf9ff;
+}
+
+button, input { font: inherit; }
+
+button { cursor: pointer; }
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.showcase {
+  background: linear-gradient(145deg, #25204b, #5841a9);
+  color: white;
+  padding: 45px 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.brand {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.brand span { color: #bcb0ff; }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #a18cff;
+}
+
+.showcase .eyebrow { color: #d1c7ff; }
+
+.showcase h1 {
+  font-size: clamp(40px, 5vw, 70px);
+  letter-spacing: -2px;
+  line-height: 1.12;
+  margin: 20px 0;
+}
+
+.showcase h1 em {
+  color: #c8baff;
+  font-style: normal;
+}
+
+.showcase-content > p:not(.eyebrow) {
+  max-width: 420px;
+  line-height: 1.8;
+  color: #ded8ff;
+}
+
+.visual {
+  height: 260px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.visual-icon {
+  font-size: 100px;
+  color: #c7b7ff;
+  z-index: 1;
+  filter: drop-shadow(0 0 30px #b5a3ff);
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid #ffffff35;
+  border-radius: 50%;
+}
+
+.orbit-one { width: 200px; height: 200px; }
+.orbit-two { width: 300px; height: 300px; }
+
+.showcase-footer {
+  font-size: 12px;
+  color: #d0c8f5;
+}
+
+.form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 30px;
+}
+
+.form-container, .dashboard {
+  width: min(420px, 100%);
+}
+
+h2 {
+  font-size: 37px;
+  letter-spacing: -1px;
+  margin: 14px 0;
+}
+
+.subheading {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 35px;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f0eefb;
+  padding: 5px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.tabs button {
+  padding: 12px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: bold;
+}
+
+.tabs button.active {
+  background: white;
+  color: var(--purple);
+  box-shadow: 0 3px 12px #22224412;
+}
+
+.field { margin-bottom: 20px; }
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+
+.field input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  background: white;
+}
+
+.field input:focus {
+  border-color: var(--purple);
+}
+
+.password-wrap { position: relative; }
+
+.password-wrap input { padding-right: 75px; }
+
+.password-wrap button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.submit-btn {
+  width: 100%;
+  border: none;
+  border-radius: 11px;
+  padding: 16px;
+  background: var(--purple);
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.submit-btn:hover { background: #604acc; }
+
+.message {
+  font-size: 13px;
+  min-height: 20px;
+  color: #bd4050;
+}
+
+.message.success { color: #278257; }
+
+.demo-note {
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--muted);
+  margin-top: 25px;
+}
+
+.dashboard { text-align: center; }
+
+.dashboard-icon {
+  font-size: 65px;
+  color: var(--purple);
+}
+
+.dashboard > p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.success-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: #e9f9f1;
+  color: #26764d;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 30px 0;
+}
+
+.success-card span { font-size: 12px; }
+
+[hidden] { display: none !important; }
+
+button:focus-visible {
+  outline: 2px solid #9e8aff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+
+  .showcase {
+    padding: 25px;
+    min-height: auto;
+  }
+
+  .showcase-content, .showcase-footer { display: none; }
+
+  .form-side {
+    min-height: 80vh;
+    padding: 45px 22px;
+  }
+}

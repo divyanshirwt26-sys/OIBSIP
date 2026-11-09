@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuthSphere | Authentication Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="layout">
+    <section class="showcase">
+      <div class="brand">✦ Auth<span>Sphere.</span></div>
+
+      <div class="showcase-content">
+        <p class="eyebrow">YOUR DIGITAL SPACE</p>
+        <h1>One account.<br><em>Endless possibilities.</em></h1>
+        <p>A thoughtfully designed authentication
+        experience for modern applications.</p>
+
+        <div class="visual">
+          <div class="visual-icon">✦</div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+        </div>
+      </div>
+
+      <p class="showcase-footer">Designed for simplicity.</p>
+    </section>
+
+    <section class="form-side">
+      <div class="form-container" id="auth-view">
+        <p class="eyebrow">WELCOME TO AUTHSPHERE</p>
+        <h2 id="form-heading">Welcome back.</h2>
+        <p class="subheading" id="form-subheading">
+          Sign in to explore your workspace.
+        </p>
+
+        <div class="tabs">
+          <button id="login-tab" class="active" type="button">
+            Sign In
+          </button>
+          <button id="signup-tab" type="button">
+            Sign Up
+          </button>
+        </div>
+
+        <form id="auth-form">
+          <div id="name-group" class="field" hidden>
+            <label for="full-name">Full Name</label>
+            <input id="full-name" type="text"
+                   placeholder="Your name"
+                   autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input id="email" type="email"
+                   placeholder="you@example.com"
+                   autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="password-wrap">
+              <input id="password" type="password"
+                     placeholder="Enter your password"
+                     autocomplete="current-password"
+                     minlength="8" required>
+              <button id="toggle-password" type="button">
+                Show
+              </button>
+            </div>
+          </div>
+
+          <div id="confirm-group" class="field" hidden>
+            <label for="confirm-password">Confirm Password</label>
+            <input id="confirm-password" type="password"
+                   placeholder="Confirm your password"
+                   autocomplete="new-password">
+          </div>
+
+          <p id="message" class="message" role="status"></p>
+
+          <button class="submit-btn" id="submit-btn" type="submit">
+            Sign In →
+          </button>
+        </form>
+
+        <p class="demo-note">
+          Frontend demonstration only. No accounts or
+          passwords are stored.
+        </p>
+      </div>
+
+      <div class="dashboard" id="dashboard" hidden>
+        <div class="dashboard-icon">✦</div>
+        <p class="eyebrow">DEMO WORKSPACE</p>
+        <h2 id="welcome-message">Welcome!</h2>
+        <p>You have successfully completed the
+        authentication interface demonstration.</p>
+
+        <div class="success-card">
+          <strong>✓ Demo session active</strong>
+          <span>This is not a server-authenticated session.</span>
+        </div>
+
+        <button id="logout-btn" class="submit-btn">
+          Return to Sign In →
+        </button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
