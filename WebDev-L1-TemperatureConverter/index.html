@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ThermoShift - an interactive temperature converter.">
+  <title>ThermoShift | Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main class="app">
+    <header class="header">
+      <div class="logo">◈ Thermo<span>Shift.</span></div>
+      <p class="subtitle">TEMPERATURE, SIMPLIFIED</p>
+    </header>
+
+    <section class="converter" aria-labelledby="title">
+      <div class="intro">
+        <span class="eyebrow">SMART CONVERTER</span>
+        <h1 id="title">Every degree<br><span>made simple.</span></h1>
+        <p>Convert temperatures instantly between
+          Celsius, Fahrenheit, and Kelvin.</p>
+      </div>
+
+      <div class="input-panel">
+        <label for="temperature">Enter Temperature</label>
+
+        <div class="input-row">
+          <input
+            id="temperature"
+            type="number"
+            step="any"
+            placeholder="e.g. 25"
+          >
+
+          <select id="unit" aria-label="Input temperature unit">
+            <option value="c">°C</option>
+            <option value="f">°F</option>
+            <option value="k">K</option>
+          </select>
+        </div>
+
+        <p id="error" class="error" role="status"></p>
+        <button id="clear" class="clear-btn">Clear Input ↺</button>
+      </div>
+
+      <div class="results-heading">
+        <h2>Converted Results</h2>
+        <span>LIVE CONVERSION</span>
+      </div>
+
+      <div class="results" aria-live="polite">
+        <article class="result-card">
+          <div class="result-icon">☀</div>
+          <p>CELSIUS</p>
+          <h3 id="celsius">--</h3>
+          <span>Degrees Celsius</span>
+        </article>
+
+        <article class="result-card">
+          <div class="result-icon">◈</div>
+          <p>FAHRENHEIT</p>
+          <h3 id="fahrenheit">--</h3>
+          <span>Degrees Fahrenheit</span>
+        </article>
+
+        <article class="result-card">
+          <div class="result-icon">❄</div>
+          <p>KELVIN</p>
+          <h3 id="kelvin">--</h3>
+          <span>Absolute Temperature</span>
+        </article>
+      </div>
+
+      <p class="tip">✦ Enter a value above to see your results.</p>
+    </section>
+
+    <footer>
+      <p>ThermoShift © 2026</p>
+      <p>Oasis Infobyte · Level 1 Task 3</p>
+    </footer>
+  </main>
+
+</body>
+</html>
