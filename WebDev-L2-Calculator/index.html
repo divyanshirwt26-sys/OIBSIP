@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CalcNova - A modern interactive calculator.">
+  <title>CalcNova | Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main class="app">
+    <header class="app-header">
+      <div class="brand">◈ Calc<span>Nova.</span></div>
+      <p>CALCULATE WITH CLARITY</p>
+    </header>
+
+    <section class="calculator-layout">
+      <div class="calculator">
+        <div class="calculator-top">
+          <span>STANDARD CALCULATOR</span>
+          <span class="status">● READY</span>
+        </div>
+
+        <div class="display">
+          <div id="expression" class="expression"
+               aria-label="Previous calculation"></div>
+          <output id="screen" aria-live="polite">0</output>
+        </div>
+
+        <div class="buttons">
+          <button class="utility" data-action="clear">AC</button>
+          <button class="utility" data-action="backspace">⌫</button>
+          <button class="utility" data-action="sign">±</button>
+          <button class="operator" data-operator="/">÷</button>
+
+          <button data-digit="7">7</button>
+          <button data-digit="8">8</button>
+          <button data-digit="9">9</button>
+          <button class="operator" data-operator="*">×</button>
+
+          <button data-digit="4">4</button>
+          <button data-digit="5">5</button>
+          <button data-digit="6">6</button>
+          <button class="operator" data-operator="-">−</button>
+
+          <button data-digit="1">1</button>
+          <button data-digit="2">2</button>
+          <button data-digit="3">3</button>
+          <button class="operator" data-operator="+">+</button>
+
+          <button class="zero" data-digit="0">0</button>
+          <button data-action="decimal">.</button>
+          <button class="equals" data-action="equals">=</button>
+        </div>
+      </div>
+
+      <aside class="history-panel">
+        <div class="history-heading">
+          <div>
+            <p class="eyebrow">YOUR WORKSPACE</p>
+            <h2>History</h2>
+          </div>
+          <button id="clear-history" class="clear-history">
+            Clear
+          </button>
+        </div>
+
+        <div id="history-list" class="history-list">
+          <p class="empty-history">
+            Your calculations will appear here.
+          </p>
+        </div>
+
+        <div class="history-tip">
+          <span>✦</span>
+          <p>Tip: Use your keyboard for faster calculations.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <p>CalcNova © 2026</p>
+      <p>Oasis Infobyte · Level 2 Task 1</p>
+    </footer>
+  </main>
+
+</body>
+</html>

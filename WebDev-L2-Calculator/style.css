@@ -1,0 +1,284 @@
+
+:root {
+  --bg: #090d1b;
+  --surface: #151b30;
+  --button: #242c46;
+  --border: #313b59;
+  --text: #f7f7ff;
+  --muted: #a3aec8;
+  --purple: #aa91ff;
+  --cyan: #6de5f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 50% 0%, #27204e, transparent 60%),
+    var(--bg);
+}
+
+.app {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 24px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.brand span {
+  color: var(--purple);
+}
+
+.app-header p,
+.eyebrow {
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.calculator-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 440px) minmax(0, 340px);
+  justify-content: center;
+  gap: 30px;
+  padding: 75px 0;
+}
+
+.calculator,
+.history-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 25px 60px #0003;
+}
+
+.calculator-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+.status {
+  color: var(--cyan);
+}
+
+.display {
+  background: #0b1021;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin: 25px 0;
+  padding: 20px;
+  min-height: 120px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.expression {
+  min-height: 22px;
+  color: var(--muted);
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+#screen {
+  display: block;
+  font-size: clamp(28px, 4vw, 43px);
+  font-weight: bold;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.buttons button {
+  min-width: 0;
+  min-height: 65px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--button);
+  color: var(--text);
+  font-size: 22px;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.buttons button:hover {
+  background: #35405f;
+  transform: translateY(-2px);
+}
+
+.buttons button:active {
+  transform: scale(.96);
+}
+
+.buttons .utility {
+  color: var(--cyan);
+}
+
+.buttons .operator {
+  color: var(--purple);
+  background: #292342;
+}
+
+.buttons .equals {
+  background: var(--purple);
+  color: #0b1021;
+  font-weight: bold;
+}
+
+.buttons .equals:hover {
+  background: #c4b3ff;
+}
+
+.buttons .zero {
+  grid-column: span 2;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-heading h2 {
+  margin: 5px 0 20px;
+}
+
+.clear-history {
+  background: transparent;
+  border: none;
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.history-list {
+  min-height: 260px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.empty-history {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.history-item {
+  border-bottom: 1px solid var(--border);
+  padding: 15px 0;
+}
+
+.history-expression {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.history-result {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.history-tip {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 30px;
+  padding: 15px;
+  background: #202943;
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.history-tip span {
+  color: var(--cyan);
+  font-size: 22px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+  padding: 25px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .calculator-layout {
+    grid-template-columns: minmax(0, 440px);
+    padding: 45px 0;
+  }
+
+  .history-panel {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 20px 14px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .calculator,
+  .history-panel {
+    padding: 16px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  .buttons button {
+    min-height: 55px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buttons button {
+    transition: none;
+  }
+}
