@@ -1,4 +1,4 @@
-# Oasis Infobyte — Web Development & Design Projects
+# Web Development & Design Projects
 
 A collection of eight web development and design projects I completed as part of the Oasis Infobyte internship task program in 2026.
 
